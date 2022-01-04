@@ -24,7 +24,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	r.HandleFunc("/db/{username}/{paassword}", func(w http.ResponseWriter, r *http.Request) {
+	r.HandleFunc("/db/{username}/{password}", func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
 		username := vars["username"]
 		password := vars["password"]
