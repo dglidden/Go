@@ -66,9 +66,9 @@ func main() {
 		result, err := db.Query(Query, username)
 		if err == nil {
 			if result.Next() {
-				fmt.Fprintf(w, UpdatePassword(username, password, db))
+				fmt.Fprint(w, UpdatePassword(username, password, db))
 			} else {
-				fmt.Fprintf(w, CreateUser(username, password, db))
+				fmt.Fprint(w, CreateUser(username, password, db))
 			}
 		} else {
 			fmt.Fprintf(w, "There was an error looking up your username %s", err.Error())
